@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Hello, <%= @student.first_name %>!</h1> 
+	<h3><i>Last logged in: <%= @student.last_loggedin %></i></h3>
+	<p>
+	  <strong>First name:</strong>
+	  <%= @student.first_name %>
+	</p>
+
+	<p>
+	  <strong>Last name:</strong>
+	  <%= @student.last_name %>
+	</p>
+
+	<p>
+	  <strong>Dob:</strong>
+	  <%= @student.dob %>
+	</p>
+
+	<p>
+	  <strong>Email:</strong>
+	  <%= @student.email %>
+	</p>
+
+	<p>
+	  <strong>Undergraduate:</strong>
+	  <%= human_boolean(@student.undergraduate ) %> 
+	</p>
+
+	<p>
+	  <strong>Mature student:</strong>
+	  <%= human_boolean(@student.mature_student) %>
+	</p>
+	
+	<p>
+	  <strong>College name:</strong>
+	  <%= @student.college_name %>
+	</p>
+	
+	<p>
+	  <strong>Course title:</strong>
+	  <%= @student.course_title %>
+	</p>
+	
+	<p>
+	  <strong>Average grade:</strong>
+	  <%= @student.average_grade %>
+	</p>
+	
+	<p>
+	  <strong>Link to LinkedIn:</strong>
+	  <%= @student.linkedin_account %>
+	</p>	
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

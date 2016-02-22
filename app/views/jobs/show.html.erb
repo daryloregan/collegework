@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1><%= @job.job_title %></h1> 
+
+	<p>
+	  <strong>Job description:</strong>
+	  <%= @job.job_description %>
+	</p>
+
+	<p>
+	  <strong>Start date:</strong>
+	  <%= @job.start_date %>
+	</p>
+
+	<p>
+	  <strong>End date:</strong>
+	  <%= @job.end_date %>
+	</p>
+
+	<p>
+	  <strong>Salary:</strong>
+	  <%= @job.salary %>
+	</p>
+
+	<p>
+	  <strong>Employer:</strong>
+	  <%= @job.employer.company_name %>
+	</p>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

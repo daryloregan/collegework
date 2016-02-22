@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>College name:</strong>
+  <%= @resume.college_name %>
+</p>
+
+<p>
+  <strong>Course title:</strong>
+  <%= @resume.course_title %>
+</p>
+
+<p>
+  <strong>Current year:</strong>
+  <%= @resume.current_year %>
+</p>
+
+<p>
+  <strong>Average grade:</strong>
+  <%= @resume.average_grade %>
+</p>
+
+<p>
+  <strong>Link to full resume:</strong>
+  <%= @resume.link_to_full_resume %>
+</p>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>

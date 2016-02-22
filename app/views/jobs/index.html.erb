@@ -1,0 +1,31 @@
+<h1>All internships</h1>
+
+ <% @jobs.each do |job| %>
+	<div class="card">
+	<%= image_tag("rails.png", :alt => "rss feed") %>
+	  <div class="card-block">
+		<h4 class="card-title"><%= job.job_title %></h4>
+		</div>
+	  <ul class="list-group list-group-flush">
+	  	<li class="list-group-item"><b>Company name: </b><%= job.employer.company_name %></li>
+		<li class="list-group-item"><b>Job description: </b><%= job.job_description %></li>
+		<li class="list-group-item"><b>Start date: </b><%= job.start_date %></li>
+		<li class="list-group-item"><b>End date: </b><%= job.end_date %></li>
+		<li class="list-group-item"><b>Duration: </b><%= jobduration(job.end_date, job.start_date) %> Months</li>
+		<li class="list-group-item"><b>Salary: </b><%= euro(job.salary) %></li>
+	  </ul>
+	  <div class="card-block">
+		<a href="#" class="card-link"><%= link_to 'Show', job %></a>
+		<a href="#" class="card-link"><%= link_to 'Edit', edit_job_path(job) %></a>
+		<a href="#" class="card-link"><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+		<%if !signed_in? %>
+			<%=link_to "Sign in first to apply!", login_path, class: "btn btn-warning btn-sm" %>
+		<% else %>
+			<%=link_to "Apply for job", jobs_success_path, class: "btn btn-success btn-sm" %>
+		<% end %>
+		
+	  </div>
+	</div>
+
+<% end %>
+<%=link_to "Add A New Job", new_job_path, class: "btn btn-success btn-sm" %>

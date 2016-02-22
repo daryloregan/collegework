@@ -1,0 +1,25 @@
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@job) do |f| %>
+	
+	  <%= f.label :company_name %>
+      <%= f.collection_select:employer_id, Employer.all, :id, :company_name %>
+	  
+      <%= f.label :job_title %>
+      <%= f.text_field :job_title %>
+	  
+	  <%= f.label :job_description %>
+      <%= f.text_field :job_description %>
+	  
+	  <%= f.label :start_date %>
+	  <%= f.date_select :start_date, { :start_year => 2016, :end_year => 2020 } %>	  
+	  
+	   <%= f.label :end_date %>
+	   <%= f.date_select :end_date, { :start_year => 2016, :end_year => 2020 } %>	  
+      
+	  <%= f.label :salary %>
+      <%= f.number_field :salary %>
+
+      <%= f.submit "Create job", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

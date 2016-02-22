@@ -1,0 +1,53 @@
+  
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@student) do |f| %>
+	
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+	  <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+	  
+	  <%= f.label :Date_of_birth %>
+      <%= f.date_select :dob, { :start_year => 1960, :end_year => 2010 } %>
+	  
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+	  
+	  <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+
+	  <%= f.label :undergraduate %>
+	  <%= f.check_box :undergraduate %>
+	  
+	  <%= f.label :mature_student %>
+      <%= f.check_box :mature_student %>
+		  
+	  <%= f.label :college_name %>
+      <%= f.text_field :college_name %>
+
+	  <%= f.label :course_title %>
+      <%= f.text_field :course_title %>
+	  
+	  <%= f.label :current_year %>
+      <%= f.select :current_year,["1st", "2nd", "3rd", "4th", "N/A"], prompt: "Pick one"%>
+	  
+	  <%= f.label :average_grade %>
+      <%= f.number_field :average_grade %>
+	  
+	  <%= f.label :linkedin_account %>
+      <%= f.text_field :linkedin_account %>
+	  
+	  <%= f.label :attachment_a_resume %>
+      <%= f.file_field :attachment %>
+	  
+	  <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+	  <% end %>
+  </div>
+</div>

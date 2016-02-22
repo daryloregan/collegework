@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All resumes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>College name</th>
+      <th>Course title</th>
+      <th>Current year</th>
+      <th>Average grade</th>
+      <th>Link to full resume</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.college_name %></td>
+        <td><%= resume.course_title %></td>
+        <td><%= resume.current_year %></td>
+        <td><%= resume.average_grade %></td>
+        <td><%= resume.link_to_full_resume %></td>
+        <td><%= link_to 'Show', resume %></td>
+        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
+        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resume', new_resume_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  college_name: MyString
+  course_title: MyString
+  current_year: 1
+  average_grade: 1
+  link_to_full_resume: MyString
+
+two:
+  college_name: MyString
+  course_title: MyString
+  current_year: 1
+  average_grade: 1
+  link_to_full_resume: MyString

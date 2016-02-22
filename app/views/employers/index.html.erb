@@ -1,0 +1,31 @@
+<h1>All employer profiles</h1>
+
+ <% @employers.each do |employer| %>
+	<div class="card">
+	<%= image_tag("rails.png", :alt => "rss feed") %>
+	  <div class="card-block">
+		<h4 class="card-title"><%= employer.company_name %></h4>
+		</div>
+	  <ul class="list-group list-group-flush">
+		<li class="list-group-item"><b>Employer's name: </b><%= employer.first_name %> <%= employer.last_name %></li>
+		<li class="list-group-item"><b>Email: </b><%= employer.email %></li>
+		<li class="list-group-item"><b>Location: </b><%= employer.location %></li>
+		<li class="list-group-item"><b>Industry: </b><%= employer.industry %></li>
+		<li class="list-group-item"><b>Website: </b><%= link_to employer.link_to_website, url_with_protocol(employer.link_to_website), :target => '_blank' %></li>
+		<li class="list-group-item"><b>View active jobs: </b>
+			<% employer.jobs.each do |job|%> 	
+				<br>
+				<%= link_to job.job_title, job %>
+			<% end %>
+		</li>
+	  </ul>
+	  <div class="card-block">
+		<a href="#" class="card-link"><%= link_to 'View profile', employer %></a>
+		<a href="#" class="card-link"><%= link_to 'Edit profile', edit_employer_path(employer) %></a>
+		<a href="#" class="card-link"><%= link_to 'Delete', employer, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+	  </div>
+	</div>
+
+<% end %>
+<%=link_to "Add A New Employer", new_employer_path, class: "btn btn-success btn-sm" %>
+

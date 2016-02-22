@@ -1,0 +1,34 @@
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@employer) do |f| %>
+	
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+	  <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+	  
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+	  
+	  <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+
+	  <%= f.label :company_name %>
+	  <%= f.text_field :company_name %>
+	
+      <%= f.label :location %>
+	  <%= f.text_field :location %>
+	  
+	  <%= f.label :industry %>
+	  <%= f.select :industry,["IT", "Marketing", "Sales", "HR & Recriuitment"], prompt: "Pick one"%>
+	  
+	  <%= f.label :link_to_website %>
+	  <%= f.text_field :link_to_website %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

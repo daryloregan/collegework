@@ -1,0 +1,30 @@
+<h1>All student profiles</h1>
+
+ <% @students.each do |student| %>
+	<div class="card">
+	<%= image_tag(student.avatar.url(:thumb)) %>
+	 <div class="card-block">
+		<h4 class="card-title"><%= student.first_name %> <%= student.last_name %></h4>
+	  </div>
+	  <ul class="list-group list-group-flush">
+		<li class="list-group-item"><b>Age: </b><%= calculate_age(student.dob) %></li>
+		<li class="list-group-item"><b>Email: </b><%= student.email %></li>
+		<li class="list-group-item"><b>Undergraduate: </b><%= human_boolean(student.undergraduate )%></li>
+		<li class="list-group-item"><b>Mature Student: </b><%= human_boolean(student.mature_student) %></li>
+		<li class="list-group-item"><b>College name: </b><%= student.college_name %></li>
+		<li class="list-group-item"><b>Course title: </b><%= student.course_title %></li>
+		<li class="list-group-item"><b>Current year: </b><%= student.current_year %></li>
+		<li class="list-group-item"><b>Average grade: </b><%= student.average_grade %></li>
+		<li class="list-group-item"><b>LinkedIn: </b><%= link_to student.linkedin_account, url_with_protocol(student.linkedin_account), :target => '_blank' %></li>
+		<li class="list-group-item"><b>Download resume: </b><%= link_to "click to download", student.attachment %></li>
+	  </ul>
+	  <div class="card-block">
+		<a href="#" class="card-link"><%= link_to 'View profile', student %></a>
+		<a href="#" class="card-link"><%= link_to 'Edit profile', edit_student_path(student) %></a>
+		<a href="#" class="card-link"><%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+	  </div>
+	</div>
+
+<% end %>
+<%=link_to "Add A New Student", new_student_path, class: "btn btn-success btn-sm" %>
+
